@@ -46,7 +46,7 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="lib" path="C:/Users/emmag/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" sourcepath="C:/Users/emmag/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20-sources.jar">
+	<classpathentry kind="lib" path="C:/Users/emmag/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" sourcepath="C:/Users/emmag/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.projectlombok"/>
