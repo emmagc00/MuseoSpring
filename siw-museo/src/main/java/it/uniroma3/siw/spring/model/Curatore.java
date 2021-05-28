@@ -27,8 +27,8 @@ public @Data class Curatore extends Persona{
 	
 	/*COSTRUTTORI*/
 	public Curatore() {
+		super();
 		this.collezioniGestite = new ArrayList<Collezione>();
-		
-	}
+		}
 	
 }

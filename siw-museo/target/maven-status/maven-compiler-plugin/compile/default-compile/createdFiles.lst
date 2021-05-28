@@ -1,0 +1,11 @@
+it\uniroma3\siw\spring\Application.class
+it\uniroma3\siw\spring\model\Opera.class
+it\uniroma3\siw\spring\repository\CollezioneRepository.class
+it\uniroma3\siw\spring\repository\CuratoreRepository.class
+it\uniroma3\siw\spring\model\Artista.class
+it\uniroma3\siw\spring\model\Collezione.class
+it\uniroma3\siw\spring\service\PersonaService.class
+it\uniroma3\siw\spring\model\Persona.class
+it\uniroma3\siw\spring\repository\ArtistaRepository.class
+it\uniroma3\siw\spring\repository\OperaRepository.class
+it\uniroma3\siw\spring\model\Curatore.class
