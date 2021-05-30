@@ -23,7 +23,7 @@ public class ArtistaService {
 	}
 	
 	@Transactional
-	public List<Artista> studentiPerNomeAndCognome(String nome, String cognome) {
+	public List<Artista> artistaPerNomeECognome (String nome, String cognome) {
 		return artistaRepository.findByNomeAndCognome(nome, cognome);
 	}
 
@@ -33,7 +33,7 @@ public class ArtistaService {
 	}
 
 	@Transactional
-	public Artista personaPerId(Long id) {
+	public Artista artistaPerId(Long id) {
 		Optional<Artista> optional = artistaRepository.findById(id);
 		if (optional.isPresent())
 			return optional.get();

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/InserimentoArtista.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+
+	<div>
+		<h4>Inserisci i dati di un'opera'</h4>
+	</div>
+	<form th:action="@{/addOpera}" method="POST" th:object="${opera}" class="form page">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>		
+		<div>
+			<div>
+				<span>Titolo:</span>
+				<span><input type="text" th:field="*{titolo}" /></span>
+				<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
+			</div>		
+            <div>
+				<span>Anno:</span>
+				<span><input type="text" th:field="*{anno}" /></span>
+				<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>
+			</div>
+            <div>
+				<span>Descrizione:</span>
+				<span><input type="text" th:field="*{descrizione}" /></span>
+			</div>
+            <!-- <div>
+				<span>Luogo di morte:</span>
+				<span><input type="text" th:field="*{luogoDiMorte}" /></span>
+				<span th:if="${#fields.hasErrors('luogoDiMorte')}" th:errors="*{luogoDiMorte}"></span>
+			</div>
+            <div>
+				<span>Data di morte:</span>
+				<span><input type="text" th:field="*{dataDiMorte}" /></span>
+				<span th:if="${#fields.hasErrors('dataDiMorte')}" th:errors="*{dataDiMorte}"></span>
+			</div>
+            <div>
+				<span>Nazionalita':</span>
+				<span><input type="text" th:field="*{nazionalita}" /></span>
+				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+			</div> -->
+			<div>
+				<span><button type="submit">Invio</button></span>
+			</div>
+		</div>
+	</form>
+	
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+    
+</body>
+</html>

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./CSS/opera.css" />
-    <link rel="stylesheet" href="./CSS/Navbar.css" />
-    <link rel="stylesheet" href="./CSS/Footer.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <meta charset="utf-8">
-    <title>La Camera di Vincent ad Arles</title>
-  </head>
+<html xmlns:th="http://www.thymeleaf.org">
 
+<head>
+	<link th:href="@{/css/opera.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
   <body>
        <!-- Navbar  -->
     <div>
@@ -102,23 +101,8 @@
       </div>
     </div>
 
-    <!-- Footer  -->
-    <div class="footer">
-      <div class="colonna sx">
-        <div>
-          <p>Telefono: +39 1234567890</p>
-          <p>Fax: +39 1234567890</p>
-          <p>Indirizzo: Via via,11 città</p>
-          <p>Orario apertura: lun-ven 9:00-18:00</p>
-        </div>
-      </div>
-      <div class="colonna dx">
-        <i class="fab fa-twitter-square fa-3x icon"></i>
-        <i class="fab fa-instagram-square fa-3x icon"></i>
-        <i class="fab fa-facebook-square fa-3x icon"></i>
-        <i class="fab fa-linkedin fa-3x icon"></i>
-    </div>
-    </div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+
   </body>
 </html>
 

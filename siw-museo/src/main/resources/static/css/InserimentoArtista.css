@@ -1,0 +1,9 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.form{
+    margin-top: 90px;
+    padding: 10%;
+}

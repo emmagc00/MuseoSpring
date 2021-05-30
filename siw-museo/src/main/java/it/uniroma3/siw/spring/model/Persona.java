@@ -27,5 +27,7 @@ public @Data abstract class Persona {
 	@NonNull
 	private String luogoDiNascita;
 	
+	private String pathFoto;
+	
 
 }
