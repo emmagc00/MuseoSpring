@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
@@ -23,6 +24,9 @@ public @Data class Opera {
 	@NonNull
 	private String anno;	//stringa - se l'anno non è conosciuto sarà "sconosciuto"
 	private String descrizione;
+	
+	@Lob
+	private String foto;
 	
 	/*ASSOCIAZIONI*/
 	@ManyToOne

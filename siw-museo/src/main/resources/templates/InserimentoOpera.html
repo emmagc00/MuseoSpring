@@ -3,7 +3,7 @@
 
 <head>
 	<link th:href="@{/css/InserimentoArtista.css}" rel="stylesheet">
-	<object  th:replace="fragments/base.html :: headerfiles()"/>
+	<object th:replace="fragments/base.html :: headerfiles()" />
 </head>
 
 <body>
@@ -13,24 +13,26 @@
 	<div>
 		<h4>Inserisci i dati di un'opera'</h4>
 	</div>
-	<form th:action="@{/addOpera}" method="POST" th:object="${opera}" class="form page">
-		<div th:if="${#fields.hasGlobalErrors()}">
-  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>		
+	<form th:action="@{/addOpera}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
 			<div>
 				<span>Titolo:</span>
-				<span><input type="text" th:field="*{titolo}" /></span>
-				<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
+				<span><input type="text" name="titolo" /></span>
+				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
 			</div>		
             <div>
 				<span>Anno:</span>
-				<span><input type="text" th:field="*{anno}" /></span>
-				<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>
+				<span><input type="text" name="anno" /></span>
+				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
 			</div>
             <div>
 				<span>Descrizione:</span>
-				<span><input type="text" th:field="*{descrizione}" /></span>
+				<span><input type="text" name="descrizione" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span>Image:</span>
+				<span> <input type="file" name="file"/></span>
 			</div>
             <!-- <div>
 				<span>Luogo di morte:</span>
@@ -51,8 +53,8 @@
 				<span><button type="submit">Invio</button></span>
 			</div>
 		</div>
-	</form>
-	
+	</form>	
+	<!--<img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">-->
     <footer th:replace="fragments/base.html :: fondo"></footer>
     
 </body>
