@@ -1,5 +1,5 @@
 package it.uniroma3.siw.spring.controller;
 
-public class LoginController {
+public class CredentialsController {
 
 }
