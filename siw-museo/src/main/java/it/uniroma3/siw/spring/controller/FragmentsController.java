@@ -25,10 +25,6 @@ public class FragmentsController{
 		return "Informazioni.html";
 	}
 	
-	@RequestMapping(value="/homeLogin", method=RequestMethod.GET)
-	public String homelogin() {
-		return "HomeLogin.html";
-	}
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String home() {
@@ -36,10 +32,4 @@ public class FragmentsController{
 	}
 	
 
-    @RequestMapping(value="/login", method = RequestMethod.GET)
-    public String login(Model model) {
-    	model.addAttribute("curatore", new Curatore());
-        return "Login.html";
-    }
-    
 }

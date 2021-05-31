@@ -10,20 +10,18 @@
 <body>
 	<header th:replace="fragments/base.html :: intestazione"></header>
 	
-	<form class="page form" th:action="@{/login}" method="POST" th:object="${curatore}">
+	<form class="page form" th:action="@{/login}" method="POST">
 	    <div>
 	        <div class="nomeCampo">Username</div>
-	        <div><input type="text" th:field="*{matricola}" /></div>
-	        <div th:if="${#fields.hasErrors('matricola')}" th:errors="*{matricola}"></div>
+	        <div><input type="text" name="username" required/></div>
 	    </div>
 	    <div>
 	        <div class="nomeCampo">Password</div>
-	        <div><input type="password" th:field="*{password}" /></div>
-	        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+	        <div><input type="password" name="password" required/></div>
 	    </div>
 	    <div class="bottoni">
-	        <span><button type="reset">Cancel</button></span>
-	        <span><button type="submit">Login</button></span>
+	        <span><button type="submit" th:href="@{'/home'}">Cancel</button></span>
+	        <span><button type="submit" th:href="@{'/admin/homeLogin'}">Login</button></span>
 	    </div>
 	</form>
 
