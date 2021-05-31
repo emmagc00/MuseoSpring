@@ -1,5 +1,7 @@
 package it.uniroma3.siw.spring.authentication;
 
+import static it.uniroma3.siw.spring.model.Credentials.ADMIN_ROLE;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import static it.uniroma3.siw.spring.model.Credentials.ADMIN_ROLE;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 
@@ -58,12 +59,12 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 				// chiunque (autenticato o no) può accedere alle pagine index, login, register,
 				// ai css e alle immagini
 
-				.antMatchers(HttpMethod.GET, "/", "/index", "/login", "/register", "/css/**", "/images/**").permitAll()
+				.antMatchers(HttpMethod.GET, "/", "/home", "/login", "/info", "/collezioni", "/artisti", "/css/**", "/images/**").permitAll()
 
 				// chiunque (autenticato o no) può mandare richieste POST al punto di accesso
 				// per login e register
 
-				.antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
+//				.antMatchers(HttpMethod.POST, "/login", "/register").permitAll()
 
 				// solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con
 				// path /admin/**
@@ -99,10 +100,12 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 				// il logout è attivato con una richiesta GET a "/logout"
 
 				.logoutUrl("/logout")
+				
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 
 				// in caso di successo, si viene reindirizzati alla /index page
 
-				.logoutSuccessUrl("/index")
+				.logoutSuccessUrl("/home")
 
 				.invalidateHttpSession(true)
 
