@@ -29,6 +29,8 @@ public class ArtistaService {
 		return artistaRepository.save(artista);
 	}
 	
+	
+	
 	@Transactional
 	public Artista saveArtistaToDB(MultipartFile file,String nome, String cognome, LocalDate dataDiNascita, LocalDate dataDiMorte,
 			                   String luogoDiNascita,String luogoDiMorte, String nazionalita){
@@ -84,5 +86,9 @@ public class ArtistaService {
 			return true;
 		else 
 			return false;
+	}
+
+	public List<Artista> findAll() {
+		return this.artistaRepository.findAll();
 	}
 }

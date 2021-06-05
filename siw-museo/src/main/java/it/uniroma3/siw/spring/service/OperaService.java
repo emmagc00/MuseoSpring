@@ -92,4 +92,13 @@ public class OperaService {
 		Optional<Artista> a = this.artistaRepository.findById(id);
 		return (List<Opera>) this.operaRepository.findByAutore(a.get());
 	}
+
+	@Transactional
+	public Opera operaPerId(Long id) {
+		Optional<Opera> optional = operaRepository.findById(id);
+        if (optional.isPresent())
+            return optional.get();
+        else 
+            return null;
+	}
 }

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.spring.service.ArtistaService;
 import it.uniroma3.siw.spring.service.CollezioneService;
 
 @Controller
@@ -13,9 +14,13 @@ public class FragmentsController{
 	
 	@Autowired
 	private CollezioneService collezioneService;
+	
+	@Autowired
+	private ArtistaService artistaService;
 
 	@RequestMapping(value="/artisti", method=RequestMethod.GET)
-	public String listaArtisti() {
+	public String listaArtisti(Model model) {
+		model.addAttribute("artisti", this.artistaService.findAll());
 		return "artisti.html";
 	}
 	

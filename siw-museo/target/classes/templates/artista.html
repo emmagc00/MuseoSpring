@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/artista.css}" rel="stylesheet">
+	<link th:href="@{/css/PaginaCollezione.css}" rel="stylesheet">
+	<object  th:replace="fragments/base.html :: headerfiles()"/>
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+
+    <div class="page">
+    <!-- Artista -->
+      <h1 class="artistName" th:text="|${artista.nome} ${artista.cognome}|">
+        Vincent van Gogh
+      </h1>
+      <div id="flex-container">
+        <div class="artistPic">
+       		 <img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{artista.foto}}">
+        </div>
+          <div class="artistInfo">
+            <div class="boxDati">
+              <p>Dati artista</p>
+            </div>
+            <div class="boxInfo">
+              <p class="question"><strong>Nome e cognome</strong></p>
+              <p class="answer" th:text="|${artista.nome} ${artista.cognome}|"> Vincent Willem van Gogh</p>
+              <p class="question"><strong>Data di nascita</strong></p>
+              <p class="answer" th:text="${artista.dataDiNascita}">30 marzo 1853</p>
+              <p class="question" ><strong>Luogo di nascita</strong></p>
+              <p class="answer" th:text="${artista.luogoDiNascita}">Zundert</p>
+              <p class="question"><strong>Data di morte</strong></p>
+              <p class="answer" th:text="${artista.dataDiMorte}">29 luglio 1890</p>
+              <p class="question"><strong>Luogo di morte</strong></p>
+              <p class="answer" th:text="${artista.luogoDiMorte}">Auvers-sur-Oise</p>
+              <p class="question"><strong>Nazionalità</strong></p>
+              <p class="lastanswer" th:text="${artista.nazionalita}">Olandese</p>
+            </div>
+          </div>
+      </div>
+
+     
+
+      <!-- Opere -->
+      <div class="correlate"><strong>OPERE CORRELATE</strong></div>
+      <div class="opereCont">
+   
+     		<ul>
+			<li th:each="opera : ${opere}">
+				<div class="single_collection">
+					<div class="image">
+						<img height="100" width="200" alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">
+					</div>
+					<div class="descrizione">
+                		<a class="linkInterno titolo" th:text="${opera.titolo}" th:href="@{'/opera' + '/' + ${opera.id}}">Notte Stellata</a>
+             		</div>
+				</div>
+			</li>
+			</ul>
+   
+   	 </div>
+    </div>
+
+   <footer th:replace="fragments/base.html :: fondo"></footer>
+   
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

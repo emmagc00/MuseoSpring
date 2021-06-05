@@ -1,11 +1,10 @@
 it/uniroma3/siw/spring/model/Credentials.class
 it/uniroma3/siw/spring/controller/validator/OperaValidator.class
-it/uniroma3/siw/spring/controller/AuthenticationController.class
-it/uniroma3/siw/spring/service/CredentialsService.class
-it/uniroma3/siw/spring/controller/validator/CredentialsValidator.class
 it/uniroma3/siw/spring/repository/ArtistaRepository.class
+it/uniroma3/siw/spring/service/CollezioneService.class
 it/uniroma3/siw/spring/model/Artista.class
 it/uniroma3/siw/spring/controller/FragmentsController.class
+it/uniroma3/siw/spring/controller/CollezioneController.class
 it/uniroma3/siw/spring/repository/OperaRepository.class
 it/uniroma3/siw/spring/Application.class
 it/uniroma3/siw/spring/repository/CuratoreRepository.class
@@ -13,7 +12,7 @@ it/uniroma3/siw/spring/model/Collezione.class
 it/uniroma3/siw/spring/model/Persona.class
 it/uniroma3/siw/spring/service/OperaService.class
 it/uniroma3/siw/spring/model/User.class
-it/uniroma3/siw/spring/authentication/AuthConfiguration.class
+it/uniroma3/siw/spring/controller/ArtistaController.class
 it/uniroma3/siw/spring/controller/OperaController.class
 it/uniroma3/siw/spring/repository/CollezioneRepository.class
 it/uniroma3/siw/spring/controller/validator/ArtistaValidator.class

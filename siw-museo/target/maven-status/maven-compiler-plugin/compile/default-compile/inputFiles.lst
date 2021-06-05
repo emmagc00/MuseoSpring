@@ -1,6 +1,7 @@
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/model/Artista.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/repository/CollezioneRepository.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/validator/OperaValidator.java
+/Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/CollezioneController.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/validator/UserValidator.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/validator/ArtistaValidator.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/service/CredentialsService.java
@@ -8,8 +9,10 @@
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/repository/OperaRepository.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/repository/CredentialsRepository.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/Application.java
+/Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/ArtistaController.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/service/OperaService.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/OperaController.java
+/Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/service/CollezioneService.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/authentication/AuthConfiguration.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/controller/AuthenticationController.java
 /Users/emilioingenito/ProgettoMuseo/MuseoSpring/siw-museo/src/main/java/it/uniroma3/siw/spring/model/Credentials.java

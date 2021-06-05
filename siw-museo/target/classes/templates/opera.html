@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{/css/opera.css}" rel="stylesheet">
+	<object th:replace="fragments/base.html :: headerfiles()" />
+</head>
+
+  <body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+
+    <div class="page">
+      <!-- Artista -->
+      <h1 class="workName" th:text="${opera.titolo}">
+        Notte stellata
+      </h1>
+      <!-- Immagine dell'opera -->
+      <div class="pic">
+      	<img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">
+      </div>
+      <!-- Box info & dettagli opera -->
+      <div id="flex-container">
+        <div class="picBio">
+          <h2 class="desc" th:text="${opera.descrizione}">Descrizione opera</h2>
+        </div>
+        <div class="picInfo">
+          <div class="boxDati">Informazioni Principali</div>
+          <div class="boxInfo">
+            <div class="question"><strong>Titolo</strong></div>
+            <div class="answer" th:text="${opera.titolo}">Notte stellata</div>
+            <div class="question"><strong>Anno</strong></div>
+            <div class="answer" th:text="${opera.anno}">1889</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
