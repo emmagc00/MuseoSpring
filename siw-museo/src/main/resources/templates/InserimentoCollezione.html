@@ -13,17 +13,12 @@
 	<div>
 		<h4>Inserisci i dati di un'opera'</h4>
 	</div>
-	<form th:action="@{/addOpera}" method="POST" class="form page" enctype="multipart/form-data">
+	<form th:action="@{/addCollezione}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
 			<div>
-				<span>Titolo:</span>
-				<span><input type="text" name="titolo" /></span>
+				<span>Nome:</span>
+				<span><input type="text" name="nome" /></span>
 				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
-			</div>		
-            <div>
-				<span>Anno:</span>
-				<span><input type="text" name="anno" /></span>
-				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
 			</div>
             <div>
 				<span>Descrizione:</span>
@@ -31,25 +26,19 @@
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Nome Collezione:</span>
-				<span><input type="text" name="nomeCollezione" /></span>
+				<span>Nome curatore:</span>
+				<span><input type="text" name="nomeCuratore" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Nome Artista:</span>
-				<span><input type="text" name="nomeArtista" /></span>
-				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
-			</div>
-			<div>
-				<span>Cognome Artista:</span>
-				<span><input type="text" name="cognomeArtista" /></span>
+				<span>Cognome curatore:</span>
+				<span><input type="text" name="cognomeCuratore" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
 				<span>Image:</span>
 				<span> <input type="file" name="file"/></span>
 			</div>
-
 			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>

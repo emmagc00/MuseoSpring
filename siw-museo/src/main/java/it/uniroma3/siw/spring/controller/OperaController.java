@@ -43,6 +43,6 @@ public class OperaController {
 			Model model)
 	{
 		Opera o = this.operaService.saveOperaToDB(file, titolo, descrizione, anno, nomeCollezione, nomeArtista, cognomeArtista);
-		return "index.html";
+		return "HomeLogin.html";
 	}
 }

@@ -31,24 +31,25 @@
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
+				<span>Nome Collezione:</span>
+				<span><input type="text" name="nomeCollezione" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span>Nome Artista:</span>
+				<span><input type="text" name="nomeArtista" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
+				<span>Cognome Artista:</span>
+				<span><input type="text" name="cognomeArtista" /></span>
+				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
+			</div>
+			<div>
 				<span>Image:</span>
 				<span> <input type="file" name="file"/></span>
 			</div>
-            <!-- <div>
-				<span>Luogo di morte:</span>
-				<span><input type="text" th:field="*{luogoDiMorte}" /></span>
-				<span th:if="${#fields.hasErrors('luogoDiMorte')}" th:errors="*{luogoDiMorte}"></span>
-			</div>
-            <div>
-				<span>Data di morte:</span>
-				<span><input type="text" th:field="*{dataDiMorte}" /></span>
-				<span th:if="${#fields.hasErrors('dataDiMorte')}" th:errors="*{dataDiMorte}"></span>
-			</div>
-            <div>
-				<span>Nazionalita':</span>
-				<span><input type="text" th:field="*{nazionalita}" /></span>
-				<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
-			</div> -->
+
 			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>

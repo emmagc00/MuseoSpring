@@ -26,8 +26,7 @@ public @Data abstract class Persona {
 	private LocalDate dataDiNascita;
 	@NonNull
 	private String luogoDiNascita;
-	
-	private String pathFoto;
+
 	
 
 }
