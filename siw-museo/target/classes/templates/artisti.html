@@ -18,14 +18,14 @@
           <ul>
 			<li th:each="artista : ${artisti}">
 				<div class="single_collection">
-	             	 <div class="image vanG"></div>
+	             	 <div class="image"><img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{artista.foto}}"></div>
 	              	 <div class="description">
-	                 	<a  th:href="${artista.pathFoto}" 
-	                        th:text="|${artista.nome} ${artista.cognome}|"
-	                        class="collection_link">Vincent van Gogh</a>
+	                 	<a th:text="|${artista.nome} ${artista.cognome}|"
+	                        class="collection_link"
+	                        th:href="@{'/artista' + '/' + ${artista.id}}">Vincent van Gogh</a>
 	                 	<p th:text="${artista.lugoDiNascita}">Pittore olandese</p>
 	              	</div>
-	             	<p th:text="|${artista.dataDiNascita} - ${artista.dataDiMorte}|">30 marzo 1853 - 29 luglio 1890</p>
+	             	<p th:text="|${artista.dataDiNascita}  ${artista.dataDiMorte}|">30 marzo 1853 - 29 luglio 1890</p>
          		</div>
 			</li>
 		 </ul>

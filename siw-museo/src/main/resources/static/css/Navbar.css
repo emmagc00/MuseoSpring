@@ -9,6 +9,10 @@
     min-height: 1000px;
 }
 
+ul{
+	list-style-type: none;
+}
+
 /******************************************/
 /*CSS Titolo con nome e logo museo*/
 /******************************************/

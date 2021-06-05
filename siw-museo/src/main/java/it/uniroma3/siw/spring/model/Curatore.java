@@ -19,8 +19,7 @@ public @Data class Curatore extends Persona{
 	private int numeroDiTelefono;
 	@NonNull
 	private String matricola;
-	@NonNull
-	private String password;
+
 	
 	/*ASSOCIAZIONI*/
 	@OneToMany(mappedBy = "curatore") 

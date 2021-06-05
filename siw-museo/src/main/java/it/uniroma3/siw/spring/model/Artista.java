@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 
@@ -19,6 +20,8 @@ public @Data class Artista extends Persona{
 	private LocalDate dataDiMorte;
 	private String luogoDiMorte;
 	private String nazionalita;
+	@Lob
+	private String foto;
 	
 	/*ASSOCIAZIONI*/
 	@OneToMany(mappedBy = "autore", cascade=CascadeType.REMOVE)

@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.controller.validator.OperaValidator;
-//import it.uniroma3.siw.spring.model.Artista;
-//import it.uniroma3.siw.spring.model.Collezione;
+import it.uniroma3.siw.spring.model.Collezione;
 import it.uniroma3.siw.spring.model.Opera;
 import it.uniroma3.siw.spring.service.OperaService;
 
@@ -27,25 +26,23 @@ public class OperaController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@RequestMapping(value="/admin/addOpera", method = RequestMethod.GET)
-	public String addPersona(Model model) {
+	@RequestMapping(value="/addOpera", method = RequestMethod.GET)
+	public String addOpera(Model model) {
 		logger.debug("addOpera");
-		model.addAttribute("opera", new Opera());
 		return "inserimentoOpera.html";
 	}
 
-	@RequestMapping(value = "/admin/addOpera", method = RequestMethod.POST)
+	@RequestMapping(value = "/addOpera", method = RequestMethod.POST)
 	public String saveOpera(@RequestParam("file") MultipartFile file,
 			@RequestParam("titolo") String titolo,
 			@RequestParam("descrizione") String descrizione,
 			@RequestParam("anno") String anno,
-			//@RequestParam("artista") Artista autore,
-			//@RequestParam("collezione") Collezione collezione,
+			@RequestParam("nomeArtista") String nomeArtista,
+			@RequestParam("cognomeArtista") String cognomeArtista,
+			@RequestParam("nomeCollezione") String nomeCollezione,
 			Model model)
 	{
-		Opera o = this.operaService.saveOperaToDB(file, titolo, descrizione, anno);
-		//model.addAttribute("opera", o);
-		return "HomeLogin.html";
+		Opera o = this.operaService.saveOperaToDB(file, titolo, descrizione, anno, nomeCollezione, nomeArtista, cognomeArtista);
+		return "index.html";
 	}
 }
-

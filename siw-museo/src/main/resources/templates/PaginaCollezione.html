@@ -14,45 +14,33 @@
       <!-- Contenuto Pagina -->
       <div class="incipit">
           <div class="titoli">
-              <h1>Dream Collection</h1>
-              <p>Curatore: Katharina Grosse</p>
+              <h1 th:text="${collezione.nome}">Dream Collection</h1>
           </div>
-          <p class="date">10/05/21  -  10/07/21</p>
       </div>
 
       <h1>Descrizione</h1> 
-      <p class="riassunto">Questa collezione racchiude opere diverse, accomunate dalla tematica del sogno.
+      <p class="riassunto" th:text="${collezione.descrizione}">Questa collezione racchiude opere diverse, accomunate dalla tematica del sogno.
       </p>
 
       <!-- container opere -->
       <div class="containerOpere">
           <div class="colonna">
-            <div class="singolaOpera">
-              <div class="immagine "></div>
-              <div class="descrizione">
-                <a class="linkInterno titolo" href="./notteStellata.html">Notte Stellata</a>
-                <a class="linkInterno" href="./vanGogh.html">van Gogh</a>
-              </div>
-            </div>
-            <div class="singolaOpera">
-              <div class="immagine2 "></div>
-              <div class="descrizione">
-                <a class="linkInterno titolo" href="./laCamera.html">La camera di Vincent</a>
-                <a class="linkInterno" href="./vanGogh.html">van Gogh</a>
-              </div>
-            </div>
-          </div>
-          <div class="colonna">
-            <div class="singolaOpera">
-              <div class="immagineM "></div>
-              <div class="descrizione">
-                <a class="linkInterno titolo" href="./ilFalsoSpecchio.html">Il falso specchio</a>
-                <a class="linkInterno" href="./magritte.html">René Magritte</a>
-              </div>
-            </div>
-          </div>
-        </div>
+          
+          <ul>
+			<li th:each="opera : ${opere}">
+				<div class="single_collection">
+					<div class="image">
+						<img height="100" width="200" alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">
+					</div>
+					<div class="descrizione">
+                		<a class="linkInterno titolo" th:text="${opera.titolo}" th:href="@{'/opera' + '/' + ${opera.id}}">Notte Stellata</a>
+             		</div>
+				</div>
+			</li>
+			</ul>
+       	</div>
       </div>
+
 
     <footer th:replace="fragments/base.html :: fondo"></footer>
     

@@ -12,19 +12,18 @@
 .containerOpere{
     /* border: solid yellow 2px; */
     display: flex;
-    flex-direction: column 2;
+    flex-direction: column;
     margin-top: 30px;
-    justify-content: space-around;
     align-items: flex-start;
+    width:100%;
 }
 
 .colonna {
     /* border: solid fuchsia 2px; */
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     align-items: center;
-    justify-content: space-around;
 }
 
 .singolaOpera{
