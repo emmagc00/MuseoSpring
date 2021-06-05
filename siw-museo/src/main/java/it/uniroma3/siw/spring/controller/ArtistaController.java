@@ -34,7 +34,7 @@ public class ArtistaController {
 	@RequestMapping(value="/addArtista", method = RequestMethod.GET)
 	public String addOpera(Model model) {
 		logger.debug("addArtista");
-		return "InserimentoArtista.html";
+		return "inserimentoArtista.html";
 	}
 
 	@RequestMapping(value = "/addArtista", method = RequestMethod.POST)

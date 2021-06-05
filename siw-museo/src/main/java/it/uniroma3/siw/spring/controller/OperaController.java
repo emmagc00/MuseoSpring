@@ -30,7 +30,7 @@ public class OperaController {
 	@RequestMapping(value="/addOpera", method = RequestMethod.GET)
 	public String addOpera(Model model) {
 		logger.debug("addOpera");
-		return "inserimentoOpera.html";
+		return "admin/inserimentoOpera.html";
 	}
 
 	@RequestMapping(value = "/addOpera", method = RequestMethod.POST)
@@ -44,7 +44,7 @@ public class OperaController {
 			Model model)
 	{
 		Opera o = this.operaService.saveOperaToDB(file, titolo, descrizione, anno, nomeCollezione, nomeArtista, cognomeArtista);
-		return "HomeLogin.html";
+		return "admin/HomeLogin.html";
 	}
 	
 	@RequestMapping(value="/opera/{id}", method = RequestMethod.GET)

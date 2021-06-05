@@ -13,16 +13,17 @@ import org.springframework.transaction.annotation.Transactional;
 import it.uniroma3.siw.spring.model.User;
 import it.uniroma3.siw.spring.repository.UserRepository;
 
-	/**
-	 * The UserService handles logic for Users.
+/**
+ * The UserService handles logic for Users.
+ */
+@Service
+public class UserService { 
+	@Autowired
+	protected UserRepository userRepository; /**
+	 * This method retrieves a User from the DB based on its ID.
+	 * @param id the id of the User to retrieve from the DB
+	 * @return the retrieved User, or null if no User with the passed ID could be found in the DB
 	 */
-	@Service
-	public class UserService { @Autowired
-		protected UserRepository userRepository; /**
-		 * This method retrieves a User from the DB based on its ID.
-		 * @param id the id of the User to retrieve from the DB
-		 * @return the retrieved User, or null if no User with the passed ID could be found in the DB
-		 */
 	@Transactional
 	public User getUser(Long id) {
 		Optional<User> result = this.userRepository.findById(id);
@@ -49,7 +50,7 @@ import it.uniroma3.siw.spring.repository.UserRepository;
 			result.add(user);
 		return result;
 	}
-	}
+}
 
 
 

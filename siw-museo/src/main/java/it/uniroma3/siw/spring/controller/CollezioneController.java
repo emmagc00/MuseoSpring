@@ -29,7 +29,7 @@ public class CollezioneController {
 	@RequestMapping(value="/addCollezione", method = RequestMethod.GET)
 	public String addOpera(Model model) {
 		logger.debug("addCollezione");
-		return "inserimentoCollezione.html";
+		return "admin/inserimentoCollezione.html";
 	}
 
 	@RequestMapping(value = "/addCollezione", method = RequestMethod.POST)
@@ -41,7 +41,7 @@ public class CollezioneController {
 			Model model)
 	{
 		Collezione c = this.collezioneService.saveCollezioneToDB(file, nome, descrizione, nomeCuratore, cognomeCuratore);
-		return "HomeLogin.html";
+		return "admin/HomeLogin.html";
 	}
 	
 	@RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)

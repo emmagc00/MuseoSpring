@@ -12,8 +12,8 @@
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
     <div class="elencoAzioni page">
-        <a class="azione" href="">Aggiungi un'opera</a>
-        <a class="azione" href="">Aggiungi una collezione</a>
+        <a class="azione" th:href="@{'/addOpera'}">Aggiungi un'opera</a>
+        <a class="azione" th:href="@{'/addCollezione'}">Aggiungi una collezione</a>
         <a class="azione" href="">Rimuovi un'opera</a>
         <a class="azione" href="">Rimuovi una collezione</a>
     </div>
