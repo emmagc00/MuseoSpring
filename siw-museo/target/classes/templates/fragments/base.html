@@ -38,18 +38,12 @@
 	<!-- Navbar dopo login  -->
 	<header th:fragment="intestazione2">
 		<div class="titleContainer">
-			<a th:href="@{'/home'}" class="icona"><i class="fas fa-landmark fa-2x padd"></i></a>
+			<a th:href="@{'/default'}" class="icona"><i class="fas fa-landmark fa-2x padd"></i></a>
 			<p class="title">Nome del museo</p>
 		</div>
 		<div class="navbar">
 			<p class="elemNavbar">
-				<a class="linkNavbar" th:href="@{'/collezioni'}">Collezioni</a>
-			</p>
-			<p class="elemNavbar">
-				<a class="linkNavbar" th:href="@{'/artisti'}">Artisti</a>
-			</p>
-			<p class="elemNavbar">
-				<a class="linkNavbar" th:href="@{'/info'}">Informazioni</a>
+				<a class="linkNavbar" th:href="@{'/default'}">Home</a>
 			</p>
 			<p class="elemNavbar">
 				<a class="linkNavbar" th:href="@{'/logout'}">Logout</a>

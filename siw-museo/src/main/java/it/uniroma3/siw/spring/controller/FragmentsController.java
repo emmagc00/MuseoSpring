@@ -42,5 +42,10 @@ public class FragmentsController{
 		return "index.html";
 	}
 	
+	@RequestMapping(value="/index", method=RequestMethod.GET)
+	public String index() {
+		return "index.html";
+	}
+	
 
 }
