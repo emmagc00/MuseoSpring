@@ -29,9 +29,7 @@
           <ul>
 			<li th:each="opera : ${opere}">
 				<div class="single_collection">
-					<div class="image">
-						<img height="100" width="200" alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">
-					</div>
+					<img height="100" width="200" alt="" class="image" src="" th:src="*{'data:image/jpeg;base64,'+{opera.foto}}">
 					<div class="descrizione">
                 		<a class="linkInterno titolo" th:text="${opera.titolo}" th:href="@{'/opera' + '/' + ${opera.id}}">Notte Stellata</a>
              		</div>
@@ -40,6 +38,7 @@
 			</ul>
        	</div>
       </div>
+    </div>
 
 
     <footer th:replace="fragments/base.html :: fondo"></footer>

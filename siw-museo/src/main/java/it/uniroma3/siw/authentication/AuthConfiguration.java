@@ -1,4 +1,4 @@
-package it.uniroma3.siw.spring.authentication;
+package it.uniroma3.siw.authentication;
 
 import static it.uniroma3.siw.spring.model.Credentials.ADMIN_ROLE;
 
@@ -43,6 +43,7 @@ public class AuthConfiguration  extends WebSecurityConfigurerAdapter implements 
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable();
 		http
 		// authorization paragraph: qui definiamo chi può accedere a cosa
 		.authorizeRequests()
@@ -74,11 +75,7 @@ public class AuthConfiguration  extends WebSecurityConfigurerAdapter implements 
 		.logoutSuccessUrl("/index")        
 		.invalidateHttpSession(true)
 		.clearAuthentication(true).permitAll();
-		http.csrf().disable();
-
 	}
-
- 
 
 	/**
 	 * This method provides the SQL queries to get username and password.

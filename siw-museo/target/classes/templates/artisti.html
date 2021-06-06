@@ -18,7 +18,7 @@
           <ul>
 			<li th:each="artista : ${artisti}">
 				<div class="single_collection">
-	             	 <div class="image"><img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{artista.foto}}"></div>
+	             	 <img alt="" class="image" src="" th:src="*{'data:image/jpeg;base64,'+{artista.foto}}">
 	              	 <div class="description">
 	                 	<a th:text="|${artista.nome} ${artista.cognome}|"
 	                        class="collection_link"

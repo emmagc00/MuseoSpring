@@ -2,56 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<link th:href="@{/css/InserimentoArtista.css}" rel="stylesheet">
+	<link th:href="@{/css/Inserimento.css}" rel="stylesheet">
 	<object th:replace="fragments/base.html :: headerfiles()" />
 </head>
 
 <body>
 	<header th:replace="fragments/base.html :: intestazione2"></header>
 
-
-	<div>
-		<h4>Inserisci i dati di un'opera'</h4>
-	</div>
 	<form th:action="@{/addOpera}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
+		<h4 class="nomeCampo">Inserisci i dati dell'opera</h4>
 			<div>
-				<span>Titolo:</span>
-				<span><input type="text" name="titolo" /></span>
+				<span class="nomeCampo">Titolo:</span>
+				<span class="contenuto"><input type="text" name="titolo" /></span>
 				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
 			</div>		
             <div>
-				<span>Anno:</span>
-				<span><input type="text" name="anno" /></span>
+				<span class="nomeCampo">Anno:</span>
+				<span class="contenuto"><input type="text" name="anno" /></span>
 				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
 			</div>
             <div>
-				<span>Descrizione:</span>
-				<span><input type="text" name="descrizione" /></span>
+				<span class="nomeCampo">Descrizione:</span>
+				<span class="contenuto"><input type="text" name="descrizione" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Nome Collezione:</span>
-				<span><input type="text" name="nomeCollezione" /></span>
+				<span class="nomeCampo">Nome Collezione:</span>
+				<span class="contenuto"><input type="text" name="nomeCollezione" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Nome Artista:</span>
-				<span><input type="text" name="nomeArtista" /></span>
+				<span class="nomeCampo">Nome Artista:</span>
+				<span class="contenuto"><input type="text" name="nomeArtista" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Cognome Artista:</span>
-				<span><input type="text" name="cognomeArtista" /></span>
+				<span class="nomeCampo">Cognome Artista:</span>
+				<span class="contenuto"><input type="text" name="cognomeArtista" /></span>
 				<!--<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>-->
 			</div>
 			<div>
-				<span>Image:</span>
-				<span> <input type="file" name="file"/></span>
+				<span class="nomeCampo">Image:</span>
+				<span class="file"> <input type="file" name="file"/></span>
 			</div>
 
 			<div>
-				<span><button type="submit">Invio</button></span>
+				<span class="bottoniConferma"><button type="submit">Invio</button></span>
 			</div>
 		</div>
 	</form>	

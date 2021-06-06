@@ -38,19 +38,13 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  flex-grow: 3;
-}
-
-.artistPic2{
-  background-image: url(../images/magritte.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  flex-grow: 3;
+  width: 70%;
+  flex-grow: 2;
 }
 
 .artistInfo{
-  flex-grow: 1;
+	flex-grow: 1;
+	width: 30%;
 }
 
 .boxDati{

@@ -2,31 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<link th:href="@{/css/InserimentoArtista.css}" rel="stylesheet">
+	<link th:href="@{/css/Inserimento.css}" rel="stylesheet">
 	<object th:replace="fragments/base.html :: headerfiles()" />
 </head>
 
 <body>
-	<header th:replace="fragments/base.html :: intestazione"></header>
+	<header th:replace="fragments/base.html :: intestazione2"></header>
 
 
-	<div>
-		<h4>Inserisci i dati dell'opera che vuoi cancellare'</h4>
-	</div>
 	<form th:action="@{/removeOpera}" method="POST" class="form page" enctype="multipart/form-data">
 		<div>
+		<h4 class="nomeCampo">Inserisci i dati dell'opera che vuoi cancellare</h4>
 			<div>
-				<span>Titolo:</span>
-				<span><input type="text" name="titolo" /></span>
+				<span class="nomeCampo">Titolo:</span>
+				<span class="contenuto"><input type="text" name="titolo" /></span>
 				<!--<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>-->
 			</div>		
             <div>
-				<span>Anno:</span>
-				<span><input type="text" name="anno" /></span>
+				<span class="nomeCampo">Anno:</span>
+				<span class="contenuto"><input type="text" name="anno" /></span>
 				<!--<span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>-->
 			</div>
 			<div>
-				<span><button type="submit">Invio</button></span>
+				<span class="bottoniConferma"><button type="submit">Invio</button></span>
 			</div>
 		</div>
 	</form>	

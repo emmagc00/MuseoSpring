@@ -19,9 +19,7 @@
 		<ul>
 			<li th:each="collezione : ${collezioni}">
 				<div class="single_collection">
-					<div class="image">
-						<img alt="" class="img_item" src="" th:src="*{'data:image/jpeg;base64,'+{collezione.foto}}">
-					</div>
+					<img alt="" class="image" src="" th:src="*{'data:image/jpeg;base64,'+{collezione.foto}}">
 					<div class="description">
 						<a th:href="@{'/collezione' + '/' + ${collezione.id}}" th:text="${collezione.nome}"
 							class="collection_link">Dream Collection</a>
