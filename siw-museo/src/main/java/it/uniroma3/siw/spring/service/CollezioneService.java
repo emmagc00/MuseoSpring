@@ -35,6 +35,11 @@ public class CollezioneService {
 	public Collezione inserisci(Collezione collezione) {
 		return collezioneRepository.save(collezione);
 	}
+	
+	public void rimuovi(Collezione c) {
+		this.collezioneRepository.delete(c);
+		
+	}
 
 	@Transactional
 	public Collezione saveCollezioneToDB(MultipartFile file, String nome, String descrizione, String nomeCuratore,
@@ -76,5 +81,10 @@ public class CollezioneService {
 	        else 
 	            return null;
 	}
-
+	
+	@Transactional
+	public List<Collezione> collezionePerNome(String nome) {
+		return this.collezioneRepository.findByNome(nome);
+	}
+	
 }

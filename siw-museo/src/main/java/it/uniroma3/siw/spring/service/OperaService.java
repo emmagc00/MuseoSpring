@@ -37,6 +37,11 @@ public class OperaService {
 	}
 	
 	@Transactional
+	public void rimuovi(Opera opera) {
+		this.operaRepository.delete(opera);
+	}
+	
+	@Transactional
 	public Opera saveOperaToDB(MultipartFile file,String titolo, String descrizione, String anno, String nomeCollezione,
 			                   String nomeArtista, String cognomeArtista){
 	
@@ -92,6 +97,16 @@ public class OperaService {
 		Optional<Artista> a = this.artistaRepository.findById(id);
 		return (List<Opera>) this.operaRepository.findByAutore(a.get());
 	}
+	
+	@Transactional
+	public List<Opera> operePerTitolo(String titolo){
+		return this.operaRepository.findByTitolo(titolo);
+	}
+	
+	@Transactional
+	public List<Opera> operePerTitoloEAnno(String titolo, String anno) {
+		return this.operaRepository.findByTitoloAndAnno(titolo, anno);
+	}
 
 	@Transactional
 	public Opera operaPerId(Long id) {
@@ -101,4 +116,5 @@ public class OperaService {
         else 
             return null;
 	}
+
 }

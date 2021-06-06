@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.model.Collezione;
+import it.uniroma3.siw.spring.model.Opera;
 import it.uniroma3.siw.spring.service.CollezioneService;
 import it.uniroma3.siw.spring.service.OperaService;
 
@@ -41,6 +42,26 @@ public class CollezioneController {
 			Model model)
 	{
 		Collezione c = this.collezioneService.saveCollezioneToDB(file, nome, descrizione, nomeCuratore, cognomeCuratore);
+		return "admin/HomeLogin.html";
+	}
+	
+	@RequestMapping(value="/removeCollezione", method = RequestMethod.GET)
+	public String removeCollezione(Model model) {
+		logger.debug("removeCollezione");
+		return "admin/cancellazioneCollezione.html";
+	}
+	
+	@RequestMapping(value = "/removeCollezione", method = RequestMethod.POST)
+	public String removeCollezione(@RequestParam("nome") String nome, Model model)
+	{
+		Collezione c;
+		try {
+			c = this.collezioneService.collezionePerNome(nome).get(0);
+			this.collezioneService.rimuovi(c);
+			logger.debug("collezione rimossa dal DB");
+		} catch (Exception e) {
+			
+		}
 		return "admin/HomeLogin.html";
 	}
 	

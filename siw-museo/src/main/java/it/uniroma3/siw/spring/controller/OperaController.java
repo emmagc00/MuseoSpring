@@ -47,6 +47,28 @@ public class OperaController {
 		return "admin/HomeLogin.html";
 	}
 	
+	@RequestMapping(value="/removeOpera", method = RequestMethod.GET)
+	public String removeOpera(Model model) {
+		logger.debug("removeOpera");
+		return "admin/cancellazioneOpera.html";
+	}
+	
+	@RequestMapping(value = "/removeOpera", method = RequestMethod.POST)
+	public String removeOpera(@RequestParam("titolo") String titolo, 
+			@RequestParam("anno") String anno, Model model)
+	{
+		logger.debug("removeOpera");
+		Opera o;
+		try {
+			o = this.operaService.operePerTitoloEAnno(titolo, anno).get(0);
+			this.operaService.rimuovi(o);
+			logger.debug("opera rimossa dal DB");
+		} catch (Exception e) {
+			
+		}
+		return "admin/HomeLogin.html";
+	}
+	
 	@RequestMapping(value="/opera/{id}", method = RequestMethod.GET)
 	public String getOpera(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("opera", this.operaService.operaPerId(id));

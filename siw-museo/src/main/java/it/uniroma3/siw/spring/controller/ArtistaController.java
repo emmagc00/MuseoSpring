@@ -50,7 +50,7 @@ public class ArtistaController {
 	{
 		Artista a = this.artistaService.saveArtistaToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
                  luogoDiNascita, luogoDiMorte,  nazionalita);
-		return "HomeLogin.html";
+		return "admin/HomeLogin.html";
 	}
 	
 	@RequestMapping(value="/artista/{id}", method = RequestMethod.GET)
