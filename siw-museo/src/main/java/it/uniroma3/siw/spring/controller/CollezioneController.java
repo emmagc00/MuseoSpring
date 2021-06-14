@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.model.Collezione;
-import it.uniroma3.siw.spring.model.Opera;
 import it.uniroma3.siw.spring.service.CollezioneService;
 import it.uniroma3.siw.spring.service.OperaService;
 
@@ -41,7 +40,7 @@ public class CollezioneController {
 			@RequestParam("cognomeCuratore") String cognomeCuratore,
 			Model model)
 	{
-		Collezione c = this.collezioneService.saveCollezioneToDB(file, nome, descrizione, nomeCuratore, cognomeCuratore);
+		this.collezioneService.saveCollezioneToDB(file, nome, descrizione, nomeCuratore, cognomeCuratore);
 		return "admin/HomeLogin.html";
 	}
 	

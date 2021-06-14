@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import it.uniroma3.siw.spring.model.Artista;
 import it.uniroma3.siw.spring.service.ArtistaService;
 import it.uniroma3.siw.spring.service.OperaService;
 
@@ -48,7 +47,7 @@ public class ArtistaController {
 			@RequestParam("nazionalita") String nazionalita,
 			Model model)
 	{
-		Artista a = this.artistaService.saveArtistaToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
+		this.artistaService.saveArtistaToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
                  luogoDiNascita, luogoDiMorte,  nazionalita);
 		return "admin/HomeLogin.html";
 	}
