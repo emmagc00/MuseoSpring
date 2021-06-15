@@ -22,7 +22,7 @@ public @Data abstract class Persona {
 	private String nome;
 	@NonNull
 	private String cognome;
-	@NonNull
+
 	private LocalDate dataDiNascita;
 	@NonNull
 	private String luogoDiNascita;

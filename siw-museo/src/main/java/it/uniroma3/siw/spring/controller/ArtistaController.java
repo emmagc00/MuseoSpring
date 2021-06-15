@@ -9,12 +9,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import it.uniroma3.siw.spring.controller.validator.ArtistaValidator;
+import it.uniroma3.siw.spring.model.Artista;
 import it.uniroma3.siw.spring.service.ArtistaService;
 import it.uniroma3.siw.spring.service.OperaService;
 
@@ -27,8 +31,12 @@ public class ArtistaController {
 	
 	@Autowired
 	private OperaService operaService;
+	
+	@Autowired
+	private ArtistaValidator artistaValidator;
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 	@RequestMapping(value="/addArtista", method = RequestMethod.GET)
 	public String addOpera(Model model) {
@@ -37,7 +45,8 @@ public class ArtistaController {
 	}
 
 	@RequestMapping(value = "/addArtista", method = RequestMethod.POST)
-	public String saveOpera(@RequestParam("file") MultipartFile file,
+	public String saveOpera(@ModelAttribute("artista") Artista a,
+			@RequestParam("file") MultipartFile file,
 			@RequestParam("nome") String nome,
 			@RequestParam("cognome") String cognome,
 			@RequestParam("dataDiNascita") @DateTimeFormat(iso = ISO.DATE) LocalDate dataDiNascita,
@@ -45,11 +54,20 @@ public class ArtistaController {
 			@RequestParam("luogoDiNascita") String luogoDiNascita,
 			@RequestParam("luogoDiMorte") String luogoDiMorte,
 			@RequestParam("nazionalita") String nazionalita,
-			Model model)
+			Model model, BindingResult bindingResult)
 	{
-		this.artistaService.saveArtistaToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
-                 luogoDiNascita, luogoDiMorte,  nazionalita);
-		return "admin/HomeLogin.html";
+		a.setNome(nome);
+		a.setCognome(cognome);
+		a.setLuogoDiNascita(luogoDiNascita);
+		
+		this.artistaValidator.validate(a, bindingResult);
+		if (!bindingResult.hasErrors()) { 
+			this.artistaService.saveArtistaToDB(file, nome, cognome, dataDiNascita, dataDiMorte,
+	                 luogoDiNascita, luogoDiMorte,  nazionalita);
+			return "admin/HomeLogin.html";
+		}
+		return "admin/inserimentoArtista.html";
+		
 	}
 	
 	@RequestMapping(value="/artista/{id}", method = RequestMethod.GET)

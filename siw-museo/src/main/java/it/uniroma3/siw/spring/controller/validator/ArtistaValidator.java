@@ -24,7 +24,7 @@ public class ArtistaValidator implements Validator {
 	public void validate(Object o, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "dataDiNascita", "required");
+		//ValidationUtils.rejectIfEmpty(errors, "dataDiNascita", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "luogoDiNascita", "required");
 
 		if (!errors.hasErrors()) {
