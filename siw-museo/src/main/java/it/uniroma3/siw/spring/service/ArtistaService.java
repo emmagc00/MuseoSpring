@@ -1,7 +1,6 @@
 package it.uniroma3.siw.spring.service;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +13,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.model.Artista;
-import it.uniroma3.siw.spring.model.Collezione;
-import it.uniroma3.siw.spring.model.Opera;
 import it.uniroma3.siw.spring.repository.ArtistaRepository;
 
 @Service
@@ -32,7 +29,7 @@ public class ArtistaService {
 	
 	
 	@Transactional
-	public Artista saveArtistaToDB(MultipartFile file,String nome, String cognome, LocalDate dataDiNascita, LocalDate dataDiMorte,
+	public Artista saveArtistaToDB(MultipartFile file,String nome, String cognome, String dataDiNascita, String dataDiMorte,
 			                   String luogoDiNascita,String luogoDiMorte, String nazionalita){
 	
 		Artista a = new Artista();

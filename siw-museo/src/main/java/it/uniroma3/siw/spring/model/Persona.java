@@ -1,6 +1,5 @@
 package it.uniroma3.siw.spring.model;
 
-import java.time.LocalDate;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +22,8 @@ public @Data abstract class Persona {
 	@NonNull
 	private String cognome;
 
-	private LocalDate dataDiNascita;
-	@NonNull
+	private String dataDiNascita;
+
 	private String luogoDiNascita;
 
 	
