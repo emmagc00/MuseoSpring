@@ -1,6 +1,5 @@
 package it.uniroma3.siw.spring.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=true)
 public @Data class Artista extends Persona{
 	
-	private LocalDate dataDiMorte;
+	private String dataDiMorte;
 	private String luogoDiMorte;
 	private String nazionalita;
 	@Lob
